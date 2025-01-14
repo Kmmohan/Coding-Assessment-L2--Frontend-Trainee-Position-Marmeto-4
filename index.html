@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="/new/Meubel House_Logos-05.png" alt="Logo">
+                <span>Marmeto</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <img src="/new/akar-icons_search.png" alt="Search">
+                <img src="/new/akar-icons_heart.png" alt="Wishlist">
+                <img src="/new/ant-design_shopping-cart-outlined.png" alt="Cart">
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <span><img src="/new/Meubel House_Logos-05.png" width="77px" height="77px"></span>
+        <h1>Cart</h1>
+        <div class="breadcrumb">
+            <span>Home</span>
+            <span><img src="/new/Vector (2).png " width="6px"></span>
+            <span>Cart</span>
+        </div>
+    </div>
+    <main class="container">
+        <div class="cart-layout">
+            <!-- Left Section: Cart Grid -->
+            <div class="cart-grid">
+                <div class="cart-headers">
+                    <span>Product</span>
+                    <span>Price</span>
+                    <span>Quantity</span>
+                    <span>Subtotal</span>
+                </div>
+    
+                <div class="cart-item">
+                    <div class="product-info">
+                        <img src="/new/Group 146.png" alt="Asgaard sofa">
+                        <h3>Asgaard sofa</h3>
+                    </div>
+                    <div class="price">₹250,000.00</div>
+                    <div class="quantity">
+                        <button class="qty-btn" onclick="updateQuantity(-1)">-</button>
+                        <span id="qty">1</span>
+                        <button class="qty-btn" onclick="updateQuantity(1)">+</button>
+                    </div>
+                    <div class="subtotal">
+                        <span id="subtotal-amount">₹250,000.00</span>
+                        <button class="delete-btn" onclick="showDeleteModal()">
+                            <img src="/new/Vector (4).png" alt="Delete">
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Right Section: Cart Totals -->
+            <div class="cart-summary">
+                <h2>Cart Totals</h2>
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="total-subtotal">₹250,000.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span id="total-amount">₹250,000.00</span>
+                </div>
+                <button class="checkout-btn">Check Out</button>
+            </div>
+        </div>
+    </main>
+
+   
+    <div id="delete-modal" class="modal">
+        <div class="modal-content">
+            <h2>Remove Item</h2>
+            <p>Are you sure you want to remove this item from your cart?</p>
+            <div class="modal-buttons">
+                <button onclick="deleteItem()">Yes, Remove</button>
+                <button onclick="hideDeleteModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <footer><img src="/new/Frame 161.png" width="1300px" height="270px">
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
